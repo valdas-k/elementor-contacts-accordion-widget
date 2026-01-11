@@ -1,40 +1,34 @@
-.accordion-widget-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.accordion-widget-container, .accordion-contacts-container, .company-names-container, 
+.company-locations-container, .staff-img-container, .staff-info-container {
+  display: flex; flex-direction: column;
+}
+
+.first-row, #second-row.active, .company-description, .staff-card-container, 
+.expand-accordion-btn, .company_social_btn, .info-buttons-container {
+  display: flex; flex-direction: row;
 }
 
 .accordion-contacts-container {
   border: 1px solid rgb(211, 211, 211);
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
   padding: 16px;
-  width: 100%;
   margin-top: 16px;
-  justify-content: space-between;
   transition: background-color 0.5s linear, color 0.5s linear, height 2s linear;
 }
 
-.first-row {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+.first-row, #second-row, .accordion-contacts-container, .company-names-container, .company-locations-container {
   justify-content: space-between;
 }
+
+.first-row:hover { cursor: pointer; }
 
 #second-row {
   display: none;
-  flex-direction: row;
-  width: 100%;
   flex-wrap: wrap;
   row-gap: 18px;
-  padding-top: 16px;
+  padding-top: 32px;
   align-items: center;
-  justify-content: space-between;
 }
-
-#second-row.active { display: flex; }
 
 p {
   margin: 0;
@@ -45,45 +39,66 @@ p {
 .accordion-contacts-container:has(#second-row.active) {	box-shadow: 0px 0px 8px lightgray; }
 
 .company-names-container {
-  display: flex;
-  flex-direction: column;
   width: 35%;
-  justify-content: space-between;
 }
 
-.company-adress svg, .company-schedule svg {
+.company-description svg {
   width: 18px;
   height: 18px;
-  align-items: center;
-  justify-items: center;
-  margin-right: 8px;
 }
 
-.company-locations-container {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-  justify-content: space-between;
+.company-description {
+  column-gap: 8px;
+  font-size: 18px;
 }
+
+.company-locations-container { width: 35%; }
 
 .info-buttons-container {
-  display: flex;
-  flex-direction: row;
   width: 20%;
   justify-content: end;
   column-gap: 16px;
   align-items: center;
 }
 
-.more-info-btn {
-  width: 50px;
-  height: 50px;
+.company_social_btn {
+  align-items: center;
+  column-gap: 8px;
+  border-radius: 8px;
+  background-color: rgb(64, 176, 64);
+  font-size: 16px;
+  color: white;
+  padding: 4px 16px;
+  width: 150px;
+  justify-content: center;
+}
+
+.company_social_btn:hover { background-color: rgb(40, 130, 40); }
+
+.company_social_btn svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+.expand-accordion-btn {
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255)
+}
+
+.expand-accordion-btn:hover {
+  background-color: rgb(240, 240, 240);
+  color: rgb(0, 0, 0);
 }
 
 .staff-card-container {
   width: 32%;
-  display: flex;
-  flex-direction: row;
   padding: 16px;
   border-radius: 16px;
   border: 1px solid rgb(211, 211, 211);
@@ -92,9 +107,7 @@ p {
 }
 
 .staff-img-container {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
+  width: 27%;
   justify-content: start;
 }
 
@@ -106,22 +119,18 @@ p {
 }
 
 .staff-info-container {
-  display: flex;
-  flex-direction: column;
   row-gap: 16px;
-  width: 80%;
+  width: 100%;
 }
 
-.staff-button { width: 100%; }
-
-.staff-name-container { width: 100%; }
-
-.staff-number-container {
-  width: 100%;
+.staff-button { 
+  width: 100%; 
+  border-radius: 8px; 
   text-align: center;
+  padding: 4px 0px;
 }
 
-.staff-email-container {
-  width: 100%;
-  text-align: center;
+.staff-button svg { 
+  width: 14px;
+  height: 14px;
 }

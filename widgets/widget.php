@@ -62,10 +62,6 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						'title' => __( 'Right', 'elementor-contacts-accordion-widget' ),
 						'icon' => 'eicon-text-align-right',
 					],
-					'justify' => [
-						'title' => __( 'Justify', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-justify',
-					],
 				],
 				'default' => 'left',
 				'toggle' => false,
@@ -90,12 +86,12 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 8,
-						'max' => 36,
+						'max' => 26,
 					],
 				],
 				'default' => [
 					'unit' => 'px',
-					'size' => 16,
+					'size' => 18,
 				],
 				'selectors' => [ '{{WRAPPER}} .company-title' => 'font-size: {{SIZE}}{{UNIT}};', ],
 			]
@@ -144,14 +140,10 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						'title' => __( 'Right', 'elementor-contacts-accordion-widget' ),
 						'icon' => 'eicon-text-align-right',
 					],
-					'justify' => [
-						'title' => __( 'Justify', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-justify',
-					],
 				],
 				'default' => 'left',
 				'toggle' => false,
-				'selectors' => [ '{{WRAPPER}} .company-description' => 'text-align: {{VALUE}};', ],
+				'selectors' => [ '{{WRAPPER}} .company-description' => 'justify-content: {{VALUE}};', ],
 			]
 		);
 
@@ -161,139 +153,6 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 				'default' => '#1D2430',
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .company-description' => 'color: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'company_description_size', [
-				'label' => __( 'Description Size', 'elementor-contacts-accordion-widget' ),
-				'label_block' => true,
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 8,
-						'max' => 36,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 16,
-				],
-				'selectors' => [ '{{WRAPPER}} .company-description' => 'font-size: {{SIZE}}px;', ],
-			]
-		);
-
-		$this->add_control (
-			'company_adress_alignment', [
-				'label' => __( 'Adress Alignment', 'elementor-contacts-accordion-widget' ),
-				'label_block' => true,
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-right',
-					],
-					'justify' => [
-						'title' => __( 'Justify', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-justify',
-					],
-				],
-				'default' => 'left',
-				'toggle' => false,
-				'selectors' => [ '{{WRAPPER}} .company-adress' => 'text-align: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'company_adress_color', [
-				'label' => __( 'Adress Color', 'elementor-contacts-accordion-widget' ),
-				'default' => '#1D2430',
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .company-adress' => 'color: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'company_adress_size', [
-				'label' => __( 'Adress Size', 'elementor-contacts-accordion-widget' ),
-				'label_block' => true,
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 8,
-						'max' => 36,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 16,
-				],
-				'selectors' => [ '{{WRAPPER}} .company-adress' => 'font-size: {{SIZE}}px;', ],
-			]
-		);
-
-		$this->add_control (
-			'company_schedule_alignment', [
-				'label' => __( 'Adress Alignment', 'elementor-contacts-accordion-widget' ),
-				'label_block' => true,
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => __( 'Left', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => __( 'Center', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => __( 'Right', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-right',
-					],
-					'justify' => [
-						'title' => __( 'Justify', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-justify',
-					],
-				],
-				'default' => 'left',
-				'toggle' => false,
-				'selectors' => [ '{{WRAPPER}} .company-schedule' => 'text-align: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'company_schedule_color', [
-				'label' => __( 'Schedule Color', 'elementor-contacts-accordion-widget' ),
-				'default' => '#1D2430',
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .company-schedule' => 'color: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'company_schedule_size', [
-				'label' => __( 'Schedule Size', 'elementor-contacts-accordion-widget' ),
-				'label_block' => true,
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 8,
-						'max' => 36,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 16,
-				],
-				'selectors' => [ '{{WRAPPER}} .company-schedule' => 'font-size: {{SIZE}}px;', ],
 			]
 		);
 		$this->end_controls_section();
@@ -362,6 +221,34 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						'default' => 'I-V: 8:00 - 17:00, VI-VII: -',
 						'placeholder' => __( 'Company Schedule', 'elementor-contacts-accordion-widget' ),
 					],
+					[
+						'name' => 'company_social_media',
+						'label' => __( 'Company Social Media Type', 'elementor-contacts-accordion-widget' ),
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => 'WhatsApp',
+						'placeholder' => __( 'Company Social Media Type', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'company_social_media_link',
+						'label' => __( 'Company Social Media Link', 'elementor-contacts-accordion-widget' ),
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => '#',
+						'placeholder' => __( 'Company Social Media Link', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'company_social_media_icon',
+						'label' => __( 'Company Social Media Link', 'elementor-contacts-accordion-widget' ),
+						'label_block' => true,
+						'type' => Controls_Manager::ICONS,
+						'default' => [
+							'value' => 'fab fa-whatsapp',
+							'library' => 'fa-brands',
+						],
+					],
+					
+
 					[
 						'name' => 'company_id',
 						'label' => __( 'company id', 'elementor-contacts-accordion-widget' ),
@@ -444,6 +331,26 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						'label_block' => true,
 						'default' => 'My Email Position',
 						'placeholder' => __( 'Enter Staff Email', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'staff_contact_icon_1',
+						'label' => __( 'Staff Contact Icon', 'elementor-contacts-accordion-widget' ),
+						'label_block' => true,
+						'type' => Controls_Manager::ICONS,
+						'default' => [
+							'value' => 'fas fa-envelope',
+							'library' => 'fa-solid',
+						],
+					],
+					[
+						'name' => 'staff_contact_icon_2',
+						'label' => __( 'Staff Contact Icon', 'elementor-contacts-accordion-widget' ),
+						'label_block' => true,
+						'type' => Controls_Manager::ICONS,
+						'default' => [
+							'value' => 'fas fa-comment',
+							'library' => 'fa-solid',
+						],
 					],
 				],
 				'title_field' => '{{{ staff_name }}}',
@@ -590,7 +497,7 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 8,
-						'max' => 32,
+						'max' => 18,
 					],
 				],
 				'default' => [
@@ -616,7 +523,6 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 		if ( !$settings['list'] ) { return; }
 		?>
-
 		<div class="accordion-widget-container">
 			<?php foreach ( $settings['list'] as $index => $company ) : ?>
 				<div class="accordion-contacts-container">
@@ -630,21 +536,25 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 							</p>
 						</div>
 						<div class="company-locations-container">
-							<p class="company-adress">
+							<p class="company-description">
 								<?php Icons_Manager::render_icon( $company['company_adress_icon'], ['aria-hidden' => 'true'] ); ?>
 								<?php echo $company['company_adress']; ?>
 							</p>
-							<p class="company-schedule">
+							<p class="company-description">
 								<?php Icons_Manager::render_icon( $company['company_schedule_icon'], ['aria-hidden' => 'true'] ); ?>
 								<?php echo $company['company_schedule']; ?>
 							</p>
 						</div>
 						<div class="info-buttons-container">
-							<a>	WhatsApp </a>
-							<button class="more-info-btn">More info</button>
+							<a href="<?php echo $company['company_social_media_link']; ?>">
+								<button class="company_social_btn"><?php Icons_Manager::render_icon( $company['company_social_media_icon'], ['aria-hidden' => 'true'] ); ?> <?php echo $company['company_social_media']; ?></button>
+							</a>
+							<button class="expand-accordion-btn"><</button>
 						</div>
 					</div>
-					<div id="second-row">
+					<?php if($index == 0) : ?> <div id="second-row" class="active">
+					<?php else : ?> <div id="second-row" class="">
+					<?php endif; ?>
 						<?php foreach ( $settings['staff_list'] as $index => $staff ) : ?>
 							<?php	if ($staff['company_id'] == $company['company_id']) { ?>
 								<div class="staff-card-container">
@@ -654,24 +564,18 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 										class="staff-img"/>
 									</div>
 									<div class="staff-info-container">
-										<div class="staff-name-container">
-											<p><?php echo $staff['staff_name']; ?></p>
-										</div>
-										<div class="staff-position-container">
-											<p><?php echo $staff['staff_position']; ?></p>
-										</div>
-										<div class="staff-number-container">
+										<p class="staff-name-container"><?php echo $staff['staff_name']; ?></p>
+										<p class="staff-position-container"><?php echo $staff['staff_position']; ?></p>
 											<a href="tel:<?php echo $staff['staff_number']; ?>">
 												<button class="staff-button">
+												<?php Icons_Manager::render_icon( $staff['staff_contact_icon_1'], ['aria-hidden' => 'true'] ); ?>
 												<?php echo $staff['staff_number']; ?></button>
 											</a>
-										</div>
-										<div class="staff-email-container">
 											<a href="mailto:<?php echo $staff['staff_email']; ?>">
 												<button class="staff-button">
+												<?php Icons_Manager::render_icon( $staff['staff_contact_icon_2'], ['aria-hidden' => 'true'] ); ?>
 												<?php echo $staff['staff_email']; ?></button>
 											</a>
-										</div>
 									</div>
 								</div>
 							<?php } ?>
