@@ -245,18 +245,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 		$this->add_control (
 			'socials_button_color', [
 				'label' => esc_html__( 'Social Media Button Color', 'elementor-contacts-accordion-widget' ),
-				'default' => '#40b040',
+				'default' => '#227e22ff',
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .company-social-btn' => 'background-color: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'socials_button_color_hover', [
-				'label' => esc_html__( 'Social Media Button Color Hover', 'elementor-contacts-accordion-widget' ),
-				'default' => '#288228',
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .company-social-btn:hover' => 'background-color: {{VALUE}};', ],
 			]
 		);
 
@@ -416,15 +407,6 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 				'default' => 'azure',
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .staff-button' => 'background-color: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'employee_button_color_hover', [
-				'label' => esc_html__( 'Employee Button Color Hover', 'elementor-contacts-accordion-widget' ),
-				'default' => '#e0e0e0ff',
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .staff-button:hover' => 'background-color: {{VALUE}};', ],
 			]
 		);
 

@@ -1,18 +1,11 @@
-.accordion-contacts-container, .company-info-container, .staff-img-container, .staff-info-container {
+.accordion-contacts-container, .company-info-container, .staff-img-container,
+.staff-description-container, .staff-info-container {
   display: flex; flex-direction: column;
 }
 
 .first-row, #second-row.active, .company-description, .staff-card-container, .expand-accordion-btn, 
-.company-social-btn, .info-buttons-container, .staff-button {
+.company-social-btn, .info-buttons-container, .staff-button, .staff-text-container, .staff-languages-container {
   display: flex; flex-direction: row;
-}
-
-.accordion-contacts-container {
-  border: 1px solid rgb(211, 211, 211);
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 16px;
-  transition: background-color 0.5s linear, color 0.5s linear, height 2s linear;
 }
 
 .first-row, .accordion-contacts-container, .company-info-container { justify-content: space-between; }
@@ -36,9 +29,50 @@ p {
 
 .accordion-contacts-container:has(#second-row.active) {	box-shadow: 0px 0px 8px lightgray; }
 
-.company-info-container { width: 35%; row-gap: 8px; }
-
 .company-description { column-gap: 8px; font-size: 18px; }
+
+.expand-accordion-btn {
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255)
+}
+
+.expand-accordion-btn:hover { background-color: rgb(240, 240, 240); color: rgb(0, 0, 0); }
+
+.staff-img-container { width: 20%; justify-content: start; }
+
+.staff-position-container { font-weight: lighter; }
+
+.staff-img {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  border: none;
+}
+
+.staff-info-container { row-gap: 16px; width: 100%; }
+
+.staff-button svg { width: 13px; height: 13px; fill: black; }
+
+.company-description svg { width: 18px; height: 18px; }
+
+.company-social-btn svg { width: 16px; height: 16px; fill: white; }
+
+.staff-text-container {
+  width: 100%;
+}
+
+.staff-description-container {
+  width: 50%;
+  row-gap: 8px;
+}
+
+.company-info-container { width: 35%; row-gap: 8px; }
 
 .info-buttons-container {
   width: 20%;
@@ -56,20 +90,14 @@ p {
   padding: 4px 16px;
   width: 150px;
   justify-content: center;
+  border: none;
+  opacity: 0.9;
+  transition: 0.1s;
 }
 
-.expand-accordion-btn {
-  width: 34px;
-  height: 34px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255)
+.company-social-btn:hover {
+  opacity: 1;
 }
-
-.expand-accordion-btn:hover { background-color: rgb(240, 240, 240); color: rgb(0, 0, 0); }
 
 .staff-card-container {
   width: 32%;
@@ -80,18 +108,13 @@ p {
   box-shadow: 0px 0px 10px #cdcdcd;
 }
 
-.staff-img-container { width: 20%; justify-content: start; }
-
-.staff-position-container { font-weight: lighter; }
-
-.staff-img {
-  width: 64px !important;
-  height: 64px !important;
-  border-radius: 50% !important;
-  border: none;
+.accordion-contacts-container {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  transition: background-color 0.5s linear, color 0.5s linear, height 2s linear;
 }
-
-.staff-info-container { row-gap: 16px; width: 100%; }
 
 .staff-button { 
   width: 100%; 
@@ -101,13 +124,15 @@ p {
   align-items: center;
   column-gap: 8px;
   justify-content: center;
+  border: 1px solid rgb(211, 211, 211);
+  opacity: 0.9;
+  transition: 0.1s;
 }
 
-.staff-button svg { width: 13px; height: 13px; fill: black; }
-
-.company-description svg { width: 18px; height: 18px; }
-
-.company-social-btn svg { width: 16px; height: 16px; fill: white; }
+.staff-button:hover {
+  border: 1px solid rgb(180, 180, 180);
+  opacity: 1;
+}
 
 .staff-languages {
   background-color: azure;
@@ -119,22 +144,37 @@ p {
 
 .staff-languages-container {
   width: 50%;
-  display: flex;
-  flex-direction: row;
   column-gap: 8px;
   align-items: start;
   justify-content: end;
 }
 
-.staff-text-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
+.first-row { row-gap: 16px; }
 
-.staff-description-container {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
+@media (max-width: 768px) {
+  .company-info-container { width: 100%;}
+
+  .info-buttons-container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info-buttons-container a { width: 100%; }
+
+  .company-social-btn { width: 100%; height: 45px; }
+
+  .staff-card-container { width: 100%; }
+
+  .staff-button { height: 40px; }
+
+  .staff-text-container { flex-wrap: wrap; }
+
+  .staff-description-container { width: 100%; }
+
+  .staff-languages-container {
+    width: 100%;
+    align-items: start;
+    justify-content: start;
+  }
 }
